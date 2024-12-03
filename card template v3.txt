@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1050">
+  <defs>
+    <!-- Dynamic Background Gradient -->
+    <linearGradient id="artBlend" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:rgba(0,0,0,0.9)"/>
+      <stop offset="50%" style="stop-color:rgba(0,0,0,0.7)"/>
+      <stop offset="100%" style="stop-color:rgba(0,0,0,0.9)"/>
+    </linearGradient>
+
+    <!-- Art Integration Mask -->
+    <mask id="artMask">
+      <rect width="750" height="1050" fill="white"/>
+      <!-- Organic shapes for art flow -->
+      <path d="M0,0 
+               Q375,100 750,0 
+               V1050 
+               Q375,950 0,1050 Z" 
+            fill="black"/>
+    </mask>
+
+    <!-- Premium Finish -->
+    <filter id="cardFinish">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.5"/>
+      <feColorMatrix type="matrix" 
+                     values="1.1 0 0 0 0  0 1.1 0 0 0  0 0 1.1 0 0  0 0 0 1 0"/>
+    </filter>
+
+    <!-- Text Enhancement -->
+    <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.7"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+
+  <!-- Base Layer -->
+  <rect width="750" height="1050" fill="url(#artBlend)"/>
+
+  <!-- Art Integration Area -->
+  <g mask="url(#artMask)">
+    <!-- Placeholder for full art -->
+    <rect width="750" height="1050" fill="#333"/>
+  </g>
+
+  <!-- Information Overlay -->
+  <g opacity="0.9">
+    <!-- Title Area -->
+    <path d="M50,50 
+             Q375,30 700,50 
+             Q375,70 50,50" 
+          fill="rgba(0,0,0,0.6)"
+          filter="url(#cardFinish)"/>
+
+    <!-- Type Area -->
+    <path d="M75,780 
+             Q375,760 675,780 
+             Q375,800 75,780" 
+          fill="rgba(0,0,0,0.6)"
+          filter="url(#cardFinish)"/>
+
+    <!-- Stats Display -->
+    <path d="M540,920 
+             Q600,900 660,920 
+             Q600,940 540,920" 
+          fill="rgba(0,0,0,0.6)"
+          filter="url(#cardFinish)"/>
+  </g>
+
+  <!-- Text Elements -->
+  <g filter="url(#textGlow)">
+    <!-- Card Name -->
+    <text x="375" y="60" 
+          text-anchor="middle" 
+          font-family="Trajan Pro, serif" 
+          font-size="36" 
+          fill="#ffffff" 
+          font-weight="300">
+      CARD NAME
+    </text>
+
+    <!-- Card Type -->
+    <text x="375" y="785" 
+          text-anchor="middle" 
+          font-family="Trajan Pro, serif" 
+          font-size="24" 
+          fill="#ffffff" 
+          font-weight="300">
+      CARD TYPE
+    </text>
+
+    <!-- Stats -->
+    <text x="600" y="930"
+          text-anchor="middle" 
+          font-family="Trajan Pro, serif" 
+          font-size="24" 
+          fill="#ffffff" 
+          font-weight="300">
+      ★★★
+    </text>
+
+    <!-- Info Text -->
+    <text x="60" y="1020"
+          font-family="Trajan Pro, serif"
+          font-size="12"
+          fill="#ffffff"
+          opacity="0.8">
+      ARTIST NAME
+    </text>
+
+    <text x="690" y="1020"
+          text-anchor="end"
+          font-family="Trajan Pro, serif"
+          font-size="12"
+          fill="#ffffff"
+          opacity="0.8">
+      ©2024 ADAMAS TCG
+    </text>
+  </g>
+</svg>

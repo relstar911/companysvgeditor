@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1050">
+  <!-- Enhanced Tera Background -->
+  <defs>
+    <linearGradient id="teraBackground" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3D1C02"/>
+      <stop offset="35%" style="stop-color:#4A2511"/>
+      <stop offset="65%" style="stop-color:#5C2A14"/>
+      <stop offset="100%" style="stop-color:#3D1C02"/>
+    </linearGradient>
+
+    <!-- Crystal Pattern -->
+    <pattern id="crystalPattern" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M30,0 L60,30 L30,60 L0,30 Z" 
+            fill="none" 
+            stroke="rgba(205,133,63,0.07)"/>
+      <circle cx="30" cy="30" r="1.5" fill="rgba(205,133,63,0.07)"/>
+    </pattern>
+
+    <!-- Earth Edge Gradients -->
+    <linearGradient id="earthEdgeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8B4513"/>
+      <stop offset="45%" style="stop-color:#CD853F"/>
+      <stop offset="55%" style="stop-color:#DEB887"/>
+      <stop offset="100%" style="stop-color:#8B4513"/>
+    </linearGradient>
+
+    <!-- Crystal Glow Effect -->
+    <filter id="crystalGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+      <feColorMatrix type="matrix" values="0.5 0 0 0 0.2   0 0.3 0 0 0.1   0 0 0.1 0 0  0 0 0 0.6 0"/>
+    </filter>
+
+    <!-- Geological Pattern -->
+    <pattern id="geoPattern" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M0,50 L25,25 L75,75 L100,50" 
+            fill="none" 
+            stroke="rgba(205,133,63,0.1)" 
+            stroke-width="1"/>
+      <path d="M50,0 L75,25 L25,75 L50,100" 
+            fill="none" 
+            stroke="rgba(205,133,63,0.1)" 
+            stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <!-- Card Base -->
+  <rect width="750" height="1050" rx="37.5" fill="url(#teraBackground)"/>
+  <rect width="750" height="1050" rx="37.5" fill="url(#crystalPattern)"/>
+  <rect width="750" height="1050" rx="37.5" fill="url(#geoPattern)"/>
+
+  <!-- Dual Edge Border -->
+  <rect x="30" y="30" width="690" height="990" rx="32.5" 
+        stroke="url(#earthEdgeGradient)" 
+        stroke-width="4" 
+        fill="none"
+        filter="url(#crystalGlow)"/>
+
+  <!-- Title Area with Crystal Shape -->
+  <path d="M50 50 
+           C150 50, 600 40, 700 50 
+           L675 130 
+           C600 120, 150 120, 75 130 Z" 
+        fill="rgba(205,133,63,0.15)"
+        stroke="url(#earthEdgeGradient)"
+        stroke-width="1.5"/>
+
+  <!-- Essence Icon (Hexagram) -->
+  <g transform="translate(60,80)">
+    <!-- Outer Circle -->
+    <circle cx="0" cy="0" r="25" 
+            fill="rgba(205,133,63,0.15)" 
+            stroke="url(#earthEdgeGradient)" 
+            stroke-width="2"/>
+    <!-- Hexagram -->
+    <path d="M0,-20 L17.32,-10 L17.32,10 L0,20 L-17.32,10 L-17.32,-10 Z" 
+          fill="none" 
+          stroke="url(#earthEdgeGradient)" 
+          stroke-width="1.5"/>
+  </g>
+
+  <!-- Art Frame with Crystal Border -->
+  <path d="M75 150 
+           C200 145, 550 145, 675 150
+           V600 
+           C550 605, 200 605, 75 600 Z" 
+        fill="rgba(205,133,63,0.08)"
+        stroke="url(#earthEdgeGradient)"
+        stroke-width="2"/>
+
+  <!-- Type Banner with Crystal Motif -->
+  <path d="M75 620 
+           C200 615, 550 615, 675 620
+           L650 670 
+           C500 665, 250 665, 100 670 Z" 
+        fill="rgba(205,133,63,0.15)"
+        stroke="url(#earthEdgeGradient)"
+        stroke-width="1"/>
+
+  <!-- Enhanced Stats Display -->
+  <g transform="translate(600,960)">
+    <path d="M0,-10 L85,25 L0,60 L-85,25 Z" 
+          fill="rgba(205,133,63,0.15)"
+          stroke="url(#earthEdgeGradient)"
+          stroke-width="1.5"/>
+  </g>
+
+  <!-- Ability Box with Crystal Frame -->
+  <rect x="90" y="700" width="570" height="200" 
+        fill="rgba(205,133,63,0.08)" 
+        stroke="url(#earthEdgeGradient)"
+        stroke-width="1"
+        rx="15"/>
+
+  <!-- Artist Credit Box -->
+  <rect x="40" y="980" width="200" height="30" 
+        fill="rgba(205,133,63,0.15)" 
+        stroke="url(#earthEdgeGradient)"
+        stroke-width="1"/>
+
+  <!-- Copyright Box -->
+  <rect x="510" y="980" width="200" height="30" 
+        fill="rgba(205,133,63,0.15)" 
+        stroke="url(#earthEdgeGradient)"
+        stroke-width="1"/>
+
+  <!-- Card Text -->
+  <text x="375" y="105" 
+        text-anchor="middle" 
+        font-family="Trajan Pro, serif" 
+        font-size="45" 
+        fill="#DEB887" 
+        font-weight="bold">
+    TERA COMPAN
+  </text>
+
+  <!-- Card Type -->
+  <text x="375" y="655" 
+        text-anchor="middle" 
+        font-family="Trajan Pro, serif" 
+        font-size="24" 
+        fill="#DEB887">
+    TERA CLASS
+  </text>
+
+  <!-- Artist Credit -->
+  <text x="50" y="1000"
+        font-family="Trajan Pro, serif"
+        font-size="12"
+        fill="#DEB887">
+    ARTIST: NAME
+  </text>
+
+  <!-- Copyright -->
+  <text x="520" y="1000"
+        font-family="Trajan Pro, serif"
+        font-size="12"
+        fill="#DEB887">
+    ©2024 ADAMAS TCG
+  </text>
+</svg>

@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1050">
+  <!-- Base Border Template -->
+  <defs>
+    <!-- Premium Edge Gradient Template -->
+    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:var(--color-primary, #4B0082)"/>
+      <stop offset="25%" style="stop-color:var(--color-secondary, #6A5ACD)"/>
+      <stop offset="50%" style="stop-color:var(--color-primary, #4B0082)"/>
+      <stop offset="75%" style="stop-color:var(--color-secondary, #6A5ACD)"/>
+      <stop offset="100%" style="stop-color:var(--color-primary, #4B0082)"/>
+    </linearGradient>
+
+    <!-- Universal Glow Effect -->
+    <filter id="cardGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+      <feColorMatrix type="matrix" values="
+        1 0 0 0 0
+        0 1 0 0 0
+        0 0 1 0 0
+        0 0 0 1 0"/>
+    </filter>
+
+    <!-- Premium Corner Decoration -->
+    <pattern id="cornerPattern" width="100" height="100" patternUnits="userSpaceOnUse">
+      <path d="M0,0 L100,100 M0,100 L100,0" 
+            stroke="var(--color-accent, #483D8B)" 
+            stroke-width="0.5"
+            opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <!-- Main Card Frame -->
+  <g id="cardFrame">
+    <!-- Outer Border -->
+    <path d="M30 30 H720 V1020 H30 V30
+             M35 35 H715 V1015 H35 V35" 
+          stroke="url(#borderGradient)" 
+          stroke-width="2" 
+          fill="none"
+          filter="url(#cardGlow)"/>
+
+    <!-- Corner Decorations -->
+    <g id="corners">
+      <!-- Top Left -->
+      <path d="M30,30 L130,30 A20,20 0 0 1 130,50 L50,50 A20,20 0 0 1 30,30"
+            fill="url(#cornerPattern)"
+            stroke="url(#borderGradient)"
+            stroke-width="1"/>
+
+      <!-- Top Right -->
+      <path d="M620,30 L720,30 A20,20 0 0 0 720,50 L640,50 A20,20 0 0 0 620,30"
+            fill="url(#cornerPattern)"
+            stroke="url(#borderGradient)"
+            stroke-width="1"/>
+
+      <!-- Bottom Left -->
+      <path d="M30,1020 L130,1020 A20,20 0 0 0 130,1000 L50,1000 A20,20 0 0 0 30,1020"
+            fill="url(#cornerPattern)"
+            stroke="url(#borderGradient)"
+            stroke-width="1"/>
+
+      <!-- Bottom Right -->
+      <path d="M620,1020 L720,1020 A20,20 0 0 1 720,1000 L640,1000 A20,20 0 0 1 620,1020"
+            fill="url(#cornerPattern)"
+            stroke="url(#borderGradient)"
+            stroke-width="1"/>
+    </g>
+
+    <!-- Title Frame -->
+    <path d="M50 50 
+             C150 45, 600 45, 700 50 
+             L690 90 C600 85, 150 85, 60 90
+             L50 50" 
+          fill="none"
+          stroke="url(#borderGradient)"
+          stroke-width="1.5"/>
+
+    <!-- Art Frame -->
+    <path d="M75 150 
+             C200 145, 550 145, 675 150
+             V600 
+             C550 605, 200 605, 75 600 Z" 
+          fill="none"
+          stroke="url(#borderGradient)"
+          stroke-width="2"/>
+
+    <!-- Type Banner -->
+    <path d="M75 620 
+             Q375 615, 675 620
+             L650 670 
+             Q375 665, 100 670 Z" 
+          fill="none"
+          stroke="url(#borderGradient)"
+          stroke-width="1"/>
+
+    <!-- Stats Display -->
+    <g transform="translate(600,960)">
+      <path d="M0,-10 L85,25 L0,60 L-85,25 Z" 
+            fill="none"
+            stroke="url(#borderGradient)"
+            stroke-width="1.5"/>
+    </g>
+
+    <!-- Ability Box -->
+    <rect x="90" y="700" width="570" height="200" 
+          fill="none" 
+          stroke="url(#borderGradient)"
+          stroke-width="1"
+          rx="20"/>
+
+    <!-- Info Boxes -->
+    <rect x="40" y="980" width="200" height="30" 
+          fill="none" 
+          stroke="url(#borderGradient)"
+          stroke-width="1"/>
+    <rect x="510" y="980" width="200" height="30" 
+          fill="none" 
+          stroke="url(#borderGradient)"
+          stroke-width="1"/>
+  </g>
+
+  <!-- CSS Variables Guide -->
+  <style>
+    :root {
+      --color-primary: #4B0082;    /* Main border color */
+      --color-secondary: #6A5ACD;  /* Secondary border color */
+      --color-accent: #483D8B;     /* Pattern and detail color */
+    }
+  </style>
+</svg>

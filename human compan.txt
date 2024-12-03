@@ -1,0 +1,122 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1050">
+  <!-- Enhanced Background Pattern -->
+  <defs>
+    <linearGradient id="humanBackground" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000428"/>
+      <stop offset="35%" style="stop-color:#001e43"/>
+      <stop offset="65%" style="stop-color:#002857"/>
+      <stop offset="100%" style="stop-color:#000428"/>
+    </linearGradient>
+
+    <!-- Dual Edge Gradients -->
+    <linearGradient id="dualEdgeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1e40af"/>
+      <stop offset="45%" style="stop-color:#3b82f6"/>
+      <stop offset="55%" style="stop-color:#818cf8"/>
+      <stop offset="100%" style="stop-color:#6366f1"/>
+    </linearGradient>
+
+    <!-- Refined Human Pattern -->
+    <pattern id="humanPattern" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M30,0 L60,30 L30,60 L0,30 Z" fill="none" stroke="rgba(37,99,235,0.07)"/>
+      <circle cx="30" cy="30" r="1.5" fill="rgba(37,99,235,0.07)"/>
+    </pattern>
+
+    <!-- Premium Glow Effect -->
+    <filter id="premiumBlueGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.145   0 0 0 0 0.388   0 0 0 0 0.921  0 0 0 0.6 0"/>
+    </filter>
+  </defs>
+
+  <!-- Card Base -->
+  <rect width="750" height="1050" rx="37.5" fill="url(#humanBackground)"/>
+  <rect width="750" height="1050" rx="37.5" fill="url(#humanPattern)"/>
+
+  <!-- Dual Edge Border -->
+  <rect x="30" y="30" width="690" height="990" rx="32.5" 
+        stroke="url(#dualEdgeGradient)" 
+        stroke-width="4" 
+        fill="none"
+        filter="url(#premiumBlueGlow)"/>
+
+  <!-- Artist Credit Box -->
+  <rect x="40" y="980" width="200" height="30" 
+        fill="rgba(37,99,235,0.15)" 
+        stroke="url(#dualEdgeGradient)"
+        stroke-width="1"/>
+
+  <!-- Copyright Box -->
+  <rect x="510" y="980" width="200" height="30" 
+        fill="rgba(37,99,235,0.15)" 
+        stroke="url(#dualEdgeGradient)"
+        stroke-width="1"/>
+
+  <!-- Title Area -->
+  <path d="M50 50 H700 L675 130 H75 Z" 
+        fill="rgba(37,99,235,0.15)"
+        stroke="url(#dualEdgeGradient)"
+        stroke-width="1.5"/>
+
+  <!-- Art Frame -->
+  <path d="M75 150 H675 V600 H75 Z" 
+        fill="url(#artFrameGradient)"
+        stroke="url(#dualEdgeGradient)"
+        stroke-width="2"/>
+
+  <!-- Type Banner -->
+  <path d="M75 620 H675 L650 670 H100 Z" 
+        fill="rgba(37,99,235,0.15)"
+        stroke="url(#dualEdgeGradient)"
+        stroke-width="1"/>
+
+  <!-- Enhanced Stats Display -->
+  <g transform="translate(600,960)">
+    <path d="M0,0 L75,25 L0,50 L-75,25 Z" 
+          fill="rgba(37,99,235,0.15)"
+          stroke="url(#dualEdgeGradient)"
+          stroke-width="1.5"/>
+  </g>
+
+  <!-- Refined Ability Box -->
+  <rect x="90" y="700" width="570" height="200" 
+        fill="rgba(37,99,235,0.08)" 
+        stroke="url(#dualEdgeGradient)"
+        stroke-width="1"
+        rx="10"/>
+
+  <!-- Card Text -->
+  <text x="375" y="105" 
+        text-anchor="middle" 
+        font-family="Arial" 
+        font-size="45" 
+        fill="#e5e7eb" 
+        font-weight="bold">
+    HUMAN COMPAN
+  </text>
+
+  <!-- Card Type -->
+  <text x="375" y="655" 
+        text-anchor="middle" 
+        font-family="Arial" 
+        font-size="24" 
+        fill="#e5e7eb">
+    HUMAN CLASS
+  </text>
+
+  <!-- Artist Credit -->
+  <text x="50" y="1000"
+        font-family="Arial"
+        font-size="12"
+        fill="#e5e7eb">
+    ARTIST: NAME
+  </text>
+
+  <!-- Copyright -->
+  <text x="520" y="1000"
+        font-family="Arial"
+        font-size="12"
+        fill="#e5e7eb">
+    ©2024 ADAMAS TCG
+  </text>
+</svg>

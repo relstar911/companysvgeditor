@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG Card Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --card-ratio: 1.4; /* 750:1050 = ~1.4 */
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            gap: 20px;
+        }
+
+        #controls {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            max-width: 800px;
+            background: #444;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        select {
+            padding: 8px;
+            font-size: 16px;
+            border-radius: 4px;
+            background: #fff;
+            border: none;
+            min-width: 200px;
+        }
+
+        #zoom-controls {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        button {
+            padding: 8px 15px;
+            border: none;
+            border-radius: 4px;
+            background: #666;
+            color: white;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        button:hover {
+            background: #777;
+        }
+
+        label {
+            color: #fff;
+        }
+
+        #svg-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            resize: both;
+            min-height: 500px;
+        }
+
+        #svg-container svg {
+            width: 100%;
+            height: auto;
+            max-height: calc(100vh - 200px);
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        @media (max-width: 600px) {
+            #controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .control-group {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            select {
+                flex-grow: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="controls">
+        <div class="control-group">
+            <label for="file-select">Select Card:</label>
+            <select id="file-select" onchange="loadSelectedSVG()"></select>
+        </div>
+        <div class="control-group" id="zoom-controls">
+            <label>Zoom:</label>
+            <button onclick="adjustZoom(-0.1)">-</button>
+            <button onclick="resetZoom()">Reset</button>
+            <button onclick="adjustZoom(0.1)">+</button>
+        </div>
+    </div>
+    <div id="svg-container">
+        <!-- SVG will be inserted here -->
+    </div>
+
+    <script>
+        let currentZoom = 1;
+
+        function adjustZoom(delta) {
+            currentZoom = Math.max(0.1, Math.min(3, currentZoom + delta));
+            const svg = document.querySelector('#svg-container svg');
+            if (svg) {
+                svg.style.transform = `scale(${currentZoom})`;
+            }
+        }
+
+        function resetZoom() {
+            currentZoom = 1;
+            const svg = document.querySelector('#svg-container svg');
+            if (svg) {
+                svg.style.transform = 'scale(1)';
+            }
+        }
+
+        async function fetchFileList() {
+            try {
+                const response = await fetch('./');
+                const text = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(text, 'text/html');
+                const links = Array.from(doc.querySelectorAll('a'));
+                const svgFiles = links
+                    .map(link => link.href)
+                    .filter(href => href.endsWith('.txt'))
+                    .map(href => href.split('/').pop());
+                
+                const select = document.getElementById('file-select');
+                select.innerHTML = svgFiles
+                    .map(file => `<option value="${file}">${file.replace('.txt', '')}</option>`)
+                    .join('');
+                
+                // Load the first file initially
+                if (svgFiles.length > 0) {
+                    loadSVG(svgFiles[0]);
+                }
+            } catch (error) {
+                console.error('Error fetching file list:', error);
+            }
+        }
+
+        async function loadSVG(filename) {
+            try {
+                const response = await fetch(filename);
+                const svgContent = await response.text();
+                document.getElementById('svg-container').innerHTML = svgContent;
+                
+                // Reset zoom when loading new SVG
+                resetZoom();
+                
+                // Ensure SVG preserves aspect ratio
+                const svg = document.querySelector('#svg-container svg');
+                if (svg) {
+                    svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+                }
+            } catch (error) {
+                console.error('Error loading SVG:', error);
+            }
+        }
+
+        function loadSelectedSVG() {
+            const select = document.getElementById('file-select');
+            loadSVG(select.value);
+        }
+
+        // Initialize the file list
+        fetchFileList();
+
+        // Refresh current SVG every 2 seconds
+        setInterval(loadSelectedSVG, 2000);
+
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            const svg = document.querySelector('#svg-container svg');
+            if (svg) {
+                svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+            }
+        });
+    </script>
+</body>
+</html>

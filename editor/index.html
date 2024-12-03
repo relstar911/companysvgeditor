@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TCG Card Editor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/template-manager.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="editor-container">
+        <!-- Left Sidebar - Component Library -->
+        <div class="sidebar component-library">
+            <div class="template-selector">
+                <div class="template-header">
+                    <h3>Card Type</h3>
+                    <select id="templateSelect" class="template-select">
+                        <option value="">Select Card Type</option>
+                    </select>
+                </div>
+                <div id="templatePreview" class="template-preview"></div>
+            </div>
+            
+            <h3>Components</h3>
+            <div class="component-categories">
+                <div class="category">
+                    <h4>Card Frames</h4>
+                    <div class="components-grid" id="frameComponents"></div>
+                </div>
+                <div class="category">
+                    <h4>Text Elements</h4>
+                    <div class="components-grid" id="textComponents"></div>
+                </div>
+                <div class="category">
+                    <h4>Decorative</h4>
+                    <div class="components-grid" id="decorativeComponents"></div>
+                </div>
+                <div class="category">
+                    <h4>Icons</h4>
+                    <div class="components-grid" id="iconComponents"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Editor Area -->
+        <div class="main-editor">
+            <div class="toolbar">
+                <div class="tool-group">
+                    <button id="selectTool" title="Select (V)" class="active"><i class="fas fa-mouse-pointer"></i></button>
+                    <button id="moveTool" title="Move (M)"><i class="fas fa-arrows-alt"></i></button>
+                    <button id="textTool" title="Text (T)"><i class="fas fa-text-height"></i></button>
+                </div>
+                <div class="tool-group">
+                    <button id="zoomIn" title="Zoom In (+)"><i class="fas fa-search-plus"></i></button>
+                    <button id="zoomOut" title="Zoom Out (-)"><i class="fas fa-search-minus"></i></button>
+                    <button id="resetZoom" title="Reset Zoom (0)"><i class="fas fa-compress-arrows-alt"></i></button>
+                </div>
+                <div class="tool-group">
+                    <button id="undo" title="Undo (Ctrl+Z)"><i class="fas fa-undo"></i></button>
+                    <button id="redo" title="Redo (Ctrl+Y)"><i class="fas fa-redo"></i></button>
+                </div>
+            </div>
+            
+            <div class="editor-canvas-container">
+                <div id="editorCanvas"></div>
+            </div>
+        </div>
+
+        <!-- Right Sidebar - Properties -->
+        <div class="sidebar properties-panel" id="propertiesPanel">
+            <h3>Properties</h3>
+            <!-- Properties will be dynamically added here -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/@svgdotjs/svg.js@3.0/dist/svg.min.js"></script>
+    <script src="js/card-templates.js"></script>
+    <script src="js/card-components.js"></script>
+    <script src="js/template-manager.js"></script>
+    <script src="js/editor.js"></script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1050">
+  <!-- Definitions -->
+  <defs>
+    <!-- Subtle Background Gradient -->
+    <linearGradient id="backgroundGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#111111"/>
+      <stop offset="50%" style="stop-color:#1a1a1a"/>
+      <stop offset="100%" style="stop-color:#111111"/>
+    </linearGradient>
+
+    <!-- Premium Border Gradient -->
+    <linearGradient id="borderGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:var(--color-primary, #ffffff)"/>
+      <stop offset="50%" style="stop-color:var(--color-secondary, #cccccc)"/>
+      <stop offset="100%" style="stop-color:var(--color-primary, #ffffff)"/>
+    </linearGradient>
+
+    <!-- Elegant Glow Effect -->
+    <filter id="elegantGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1"/>
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.5 0"/>
+    </filter>
+
+    <!-- Minimal Pattern -->
+    <pattern id="subtlePattern" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M25,0 L50,25 L25,50 L0,25 Z" 
+            fill="none" 
+            stroke="rgba(255,255,255,0.03)" 
+            stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Card Base -->
+  <rect width="750" height="1050" rx="40" fill="url(#backgroundGradient)"/>
+  <rect width="750" height="1050" rx="40" fill="url(#subtlePattern)"/>
+
+  <!-- Minimal Border -->
+  <rect x="25" y="25" width="700" height="1000" rx="35" 
+        stroke="url(#borderGradient)" 
+        stroke-width="1.5" 
+        fill="none"
+        filter="url(#elegantGlow)"/>
+
+  <!-- Enhanced Art Frame -->
+  <path d="M50 150 
+           C150 145, 600 145, 700 150
+           V750 
+           C600 755, 150 755, 50 750 Z" 
+        fill="none"
+        stroke="url(#borderGradient)"
+        stroke-width="1"/>
+
+  <!-- Title Area -->
+  <path d="M50 50 
+           H700
+           L675 120 
+           H75 Z" 
+        fill="none"
+        stroke="url(#borderGradient)"
+        stroke-width="1"/>
+
+  <!-- Essence Icon -->
+  <g transform="translate(65,85)">
+    <circle cx="0" cy="0" r="20" 
+            fill="none" 
+            stroke="url(#borderGradient)" 
+            stroke-width="1"/>
+  </g>
+
+  <!-- Type Banner -->
+  <path d="M75 780 
+           H675
+           L650 830 
+           H100 Z" 
+        fill="none"
+        stroke="url(#borderGradient)"
+        stroke-width="1"/>
+
+  <!-- Stats Display -->
+  <g transform="translate(600,950)">
+    <path d="M0,-15 L60,15 L0,45 L-60,15 Z" 
+          fill="none"
+          stroke="url(#borderGradient)"
+          stroke-width="1"/>
+  </g>
+
+  <!-- Info Area -->
+  <rect x="50" y="975" width="150" height="25" 
+        fill="none" 
+        stroke="url(#borderGradient)"
+        stroke-width="0.5"/>
+  <rect x="550" y="975" width="150" height="25" 
+        fill="none" 
+        stroke="url(#borderGradient)"
+        stroke-width="0.5"/>
+
+  <!-- Text Elements -->
+  <text x="375" y="95" 
+        text-anchor="middle" 
+        font-family="Trajan Pro, serif" 
+        font-size="36" 
+        fill="#ffffff" 
+        font-weight="300">
+    CARD NAME
+  </text>
+
+  <text x="375" y="815" 
+        text-anchor="middle" 
+        font-family="Trajan Pro, serif" 
+        font-size="24" 
+        fill="#ffffff" 
+        font-weight="300">
+    CARD TYPE
+  </text>
+
+  <!-- Info Text -->
+  <text x="60" y="992"
+        font-family="Trajan Pro, serif"
+        font-size="10"
+        fill="#ffffff"
+        font-weight="300">
+    ARTIST NAME
+  </text>
+
+  <text x="560" y="992"
+        font-family="Trajan Pro, serif"
+        font-size="10"
+        fill="#ffffff"
+        font-weight="300">
+    ©2024 ADAMAS TCG
+  </text>
+</svg>

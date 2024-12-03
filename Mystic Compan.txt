@@ -1,0 +1,157 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 1050">
+  <!-- Enhanced Mystical Background -->
+  <defs>
+    <linearGradient id="mysticBackground" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0033"/>
+      <stop offset="35%" style="stop-color:#2b0066"/>
+      <stop offset="65%" style="stop-color:#4d0099"/>
+      <stop offset="100%" style="stop-color:#1a0033"/>
+    </linearGradient>
+
+    <!-- Arcane Pattern -->
+    <pattern id="arcanePattern" width="100" height="100" patternUnits="userSpaceOnUse">
+      <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(147,112,219,0.05)"/>
+      <path d="M50,10 L90,50 L50,90 L10,50 Z" fill="none" stroke="rgba(147,112,219,0.07)"/>
+      <circle cx="50" cy="50" r="3" fill="rgba(147,112,219,0.1)"/>
+      <!-- Mystical Symbols -->
+      <path d="M50,20 L60,35 L50,50 L40,35 Z" fill="rgba(147,112,219,0.05)"/>
+      <circle cx="50" cy="50" r="15" fill="none" stroke="rgba(147,112,219,0.05)" stroke-dasharray="4,4"/>
+    </pattern>
+
+    <!-- Ethereal Edge Gradient -->
+    <linearGradient id="mysticEdgeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#9370DB"/>
+      <stop offset="45%" style="stop-color:#E6E6FA"/>
+      <stop offset="55%" style="stop-color:#9370DB"/>
+      <stop offset="100%" style="stop-color:#483D8B"/>
+    </linearGradient>
+
+    <!-- Magical Glow Effect -->
+    <filter id="magicalGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3"/>
+      <feColorMatrix type="matrix" values="
+        0.5 0 0 0 0.4
+        0 0.3 0 0 0.2
+        0 0 0.7 0 0.8
+        0 0 0 1 0"/>
+    </filter>
+
+    <!-- Mystical Energy Flow -->
+    <pattern id="energyFlow" width="150" height="150" patternUnits="userSpaceOnUse">
+      <path d="M75,0 Q112.5,37.5 75,75 T75,150" 
+            fill="none" 
+            stroke="rgba(147,112,219,0.1)" 
+            stroke-width="1"/>
+      <path d="M0,75 Q37.5,112.5 75,75 T150,75" 
+            fill="none" 
+            stroke="rgba(147,112,219,0.1)" 
+            stroke-width="1"/>
+      <!-- Additional Arcane Circles -->
+      <circle cx="75" cy="75" r="30" fill="none" stroke="rgba(147,112,219,0.05)" stroke-dasharray="5,5"/>
+      <circle cx="75" cy="75" r="45" fill="none" stroke="rgba(147,112,219,0.03)" stroke-dasharray="3,3"/>
+    </pattern>
+  </defs>
+
+  <!-- Card Base -->
+  <rect width="750" height="1050" rx="37.5" fill="url(#mysticBackground)"/>
+  <rect width="750" height="1050" rx="37.5" fill="url(#arcanePattern)"/>
+  <rect width="750" height="1050" rx="37.5" fill="url(#energyFlow)"/>
+
+  <!-- Mystical Border -->
+  <path d="M30 30 H720 V1020 H30 V30
+           M35 35 H715 V1015 H35 V35" 
+        stroke="url(#mysticEdgeGradient)" 
+        stroke-width="2" 
+        fill="none"
+        filter="url(#magicalGlow)"/>
+
+  <!-- Enchanted Title Area -->
+  <path d="M50 50 
+           C150 45, 600 45, 700 50 
+           L690 90 C600 85, 150 85, 60 90
+           L50 50" 
+        fill="rgba(147,112,219,0.15)"
+        stroke="url(#mysticEdgeGradient)"
+        stroke-width="1.5"/>
+
+  <!-- Arcane Art Frame -->
+  <path d="M75 150 
+           C200 145, 550 145, 675 150
+           V600 
+           C550 605, 200 605, 75 600 Z" 
+        fill="rgba(147,112,219,0.05)"
+        stroke="url(#mysticEdgeGradient)"
+        stroke-width="2"/>
+
+  <!-- Mystic Type Banner -->
+  <path d="M75 620 
+           Q375 615, 675 620
+           L650 670 
+           Q375 665, 100 670 Z" 
+        fill="rgba(147,112,219,0.15)"
+        stroke="url(#mysticEdgeGradient)"
+        stroke-width="1"/>
+
+  <!-- Ethereal Stats Display -->
+  <g transform="translate(600,960)">
+    <path d="M0,-10 L85,25 L0,60 L-85,25 Z" 
+          fill="rgba(147,112,219,0.15)"
+          stroke="url(#mysticEdgeGradient)"
+          stroke-width="1.5"/>
+  </g>
+
+  <!-- Spell Box -->
+  <rect x="90" y="700" width="570" height="200" 
+        fill="rgba(147,112,219,0.08)" 
+        stroke="url(#mysticEdgeGradient)"
+        stroke-width="1"
+        rx="20"/>
+
+  <!-- Artist Credit Box -->
+  <rect x="40" y="980" width="200" height="30" 
+        fill="rgba(147,112,219,0.15)" 
+        stroke="url(#mysticEdgeGradient)"
+        stroke-width="1"/>
+
+  <!-- Copyright Box -->
+  <rect x="510" y="980" width="200" height="30" 
+        fill="rgba(147,112,219,0.15)" 
+        stroke="url(#mysticEdgeGradient)"
+        stroke-width="1"/>
+
+  <!-- Card Text -->
+  <text x="375" y="85" 
+        text-anchor="middle" 
+        font-family="Trajan Pro, serif" 
+        font-size="45" 
+        fill="#E6E6FA" 
+        font-weight="bold"
+        filter="url(#magicalGlow)">
+    MYSTIC COMPAN
+  </text>
+
+  <!-- Card Type -->
+  <text x="375" y="655" 
+        text-anchor="middle" 
+        font-family="Trajan Pro, serif" 
+        font-size="24" 
+        fill="#E6E6FA">
+    MYSTIC CLASS
+  </text>
+
+  <!-- Artist Credit -->
+  <text x="50" y="1000"
+        font-family="Trajan Pro, serif"
+        font-size="12"
+        fill="#E6E6FA">
+    ARTIST: NAME
+  </text>
+
+  <!-- Copyright -->
+  <text x="520" y="1000"
+        font-family="Trajan Pro, serif"
+        font-size="12"
+        fill="#E6E6FA">
+    ©2024 ADAMAS TCG
+  </text>
+</svg>

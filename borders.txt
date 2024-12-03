@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 200">
+  <!-- Human Border Sample -->
+  <g transform="translate(0,0)">
+    <rect x="10" y="10" width="180" height="180" rx="10" 
+          fill="none" stroke="#ADD8E6" stroke-width="2"/>
+    <rect x="15" y="15" width="170" height="170" rx="8" 
+          fill="none" stroke="#002147" stroke-width="1"/>
+    <text x="100" y="100" text-anchor="middle" fill="#ADD8E6" 
+          font-family="Trajan Pro, serif" font-size="14">Human</text>
+  </g>
+
+  <!-- Druid Border Sample -->
+  <g transform="translate(200,0)">
+    <path d="M10,10 C40,5 150,5 190,10 V190 C150,195 40,195 10,190 Z" 
+          fill="none" stroke="#228B22" stroke-width="2"/>
+    <path d="M15,15 C42,10 148,10 185,15 V185 C148,190 42,190 15,185 Z" 
+          fill="none" stroke="#50C878" stroke-width="1"/>
+    <text x="100" y="100" text-anchor="middle" fill="#50C878" 
+          font-family="Trajan Pro, serif" font-size="14">Druid</text>
+  </g>
+
+  <!-- Elven Border Sample -->
+  <g transform="translate(400,0)">
+    <rect x="10" y="10" width="180" height="180" rx="10" 
+          fill="none" stroke="#FFD700" stroke-width="2"/>
+    <path d="M15,15 H185 V185 H15 Z" 
+          fill="none" stroke="#CD7F32" stroke-width="1"/>
+    <text x="100" y="100" text-anchor="middle" fill="#FFD700" 
+          font-family="Trajan Pro, serif" font-size="14">Elven</text>
+  </g>
+
+  <!-- Mystic Border Sample -->
+  <g transform="translate(600,0)">
+    <rect x="10" y="10" width="180" height="180" rx="10" 
+          fill="none" stroke="#4B0082" stroke-width="2"/>
+    <path d="M15,15 H185 V185 H15 Z" 
+          fill="none" stroke="#2E0854" stroke-width="1"/>
+    <text x="100" y="100" text-anchor="middle" fill="#4B0082" 
+          font-family="Trajan Pro, serif" font-size="14">Mystic</text>
+  </g>
+
+  <!-- Ignasar Border Sample -->
+  <g transform="translate(800,0)">
+    <path d="M10,10 L190,10 L190,190 L10,190 Z" 
+          fill="none" stroke="#FF4500" stroke-width="2"/>
+    <path d="M15,15 L185,15 L185,185 L15,185 Z" 
+          fill="none" stroke="#FF6347" stroke-width="1"/>
+    <text x="100" y="100" text-anchor="middle" fill="#FF4500" 
+          font-family="Trajan Pro, serif" font-size="14">Ignasar</text>
+  </g>
+
+  <!-- Tera Border Sample -->
+  <g transform="translate(1000,0)">
+    <path d="M10,10 L190,10 L190,190 L10,190 Z" 
+          fill="none" stroke="#8B4513" stroke-width="2"/>
+    <path d="M15,15 L185,15 L185,185 L15,185 Z" 
+          fill="none" stroke="#CD853F" stroke-width="1"/>
+    <text x="100" y="100" text-anchor="middle" fill="#8B4513" 
+          font-family="Trajan Pro, serif" font-size="14">Tera</text>
+  </g>
+
+  <!-- Aurora Border Sample -->
+  <g transform="translate(1200,0)">
+    <path d="M10,10 L190,10 L190,190 L10,190 Z" 
+          fill="none" stroke="#B0E0E6" stroke-width="2"/>
+    <path d="M15,15 L185,15 L185,185 L15,185 Z" 
+          fill="none" stroke="#87CEEB" stroke-width="1"/>
+    <text x="100" y="100" text-anchor="middle" fill="#B0E0E6" 
+          font-family="Trajan Pro, serif" font-size="14">Aurora</text>
+  </g>
+
+  <!-- Luma Border Sample -->
+  <g transform="translate(1400,0)">
+    <path d="M10,10 L190,10 L190,190 L10,190 Z" 
+          fill="none" stroke="#FFD700" stroke-width="2"/>
+    <path d="M15,15 L185,15 L185,185 L15,185 Z" 
+          fill="none" stroke="#FFFAFA" stroke-width="1"/>
+    <text x="100" y="100" text-anchor="middle" fill="#FFD700" 
+          font-family="Trajan Pro, serif" font-size="14">Luma</text>
+  </g>
+</svg>
